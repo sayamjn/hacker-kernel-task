@@ -22,7 +22,7 @@
             <div class="card-header">Task Details</div>
             <ul class="list-group list-group-flush user">
               <% task.forEach(function(task){%>
-                <li  class="my-2 list-group-item"> <h5 style="text-decoration: none; color:inherit;"> <%= task.user.name %> | <%= task.task%></h5></li>
+                <li  class="my-2 list-group-item"> <h5 style="text-decoration: none; color:inherit;"> <%= task.user.name %> | <%= task.task%> | <%= task.type %></h5></li>
                  <%})%>
             </ul>
           </div>
