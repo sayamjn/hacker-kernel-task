@@ -1,0 +1,33 @@
+<%-include("partials/head")-%>
+<div class="main">
+  <%-include("partials/nav")-%>  
+  <form action="/task" class="w-50 m-auto" method="post">
+    <h1>Task</h1>
+    <select class="form-control my-3" name="user">
+      <% user.forEach(function(u){ %>
+        <option value="<%= u._id %>"><%= u.name %></option>
+      <% }) %>
+    </select>
+    <input class="form-control my-3" type="text" name="task" placeholder="Task Name">
+    <label for="type">Task Type:</label>
+    <input type="radio" name="type" value="pending" checked> Pending
+    <input type="radio" name="type" value="done"> Done
+    <div class="d-flex justify-content-between align-items-center mt-3"> 
+      <button class="btn btn-dark btn-lg"><h5>Add Task</h5></button>
+      <a class="btn btn-dark text-decoration-none" href="/export"><h5>Get Excel File</h5></a>
+    </div>
+  </form>
+         <div style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" class="mb-5 d-flex justify-content-between align-items-center ">  
+          <div class="card">
+            <div class="card-header">Task Details</div>
+            <ul class="list-group list-group-flush user">
+              <% task.forEach(function(task){%>
+                <li  class="my-2 list-group-item"> <h5 style="text-decoration: none; color:inherit;"> <%= task.user.name %> | <%= task.task%></h5></li>
+                 <%})%>
+            </ul>
+          </div>
+        </div>
+
+        <%-include("partials/footer")-%>
+     </div>
+     <%-include("partials/foot")-%>

@@ -1,0 +1,36 @@
+<%-include("partials/head")-%>
+<div class="main">
+  <%-include("partials/nav")-%>   
+    <form action="/user" class="form-group my-5" method="post"> 
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="name" class="form-label">Your Name</label>
+          <input class="form-control" id="your-name" type="text" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">email</label>
+          <input type="text" class="form-control" id="email" name="email" ction="/create" required>
+        </div>
+        <div class="col-md-6">
+          <label for="number" class="form-label">Your number</label>
+          <input class="form-control" type="text" name="number" placeholder="Enter your name" required>
+        </div>
+              <button  type="submit" class="btn btn-dark w-100 fw-bold" >Submit</button>
+        </div>
+    </form>
+
+
+
+  <div class="card" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+    <div class="card-header"><h1>USER DETAIL</h1></div>
+      <ul class="list-group list-group-flush user">
+        <% user.forEach(function(user){%>
+          <li class="my-2 list-group-item">
+            <a style="text-decoration: none; color:initial;" href='/user/<%=user.email-%>'<h5><%= user.name%> | ID- <%= user._id%></h5></a>
+          </li>
+          <%})%>
+      </ul>
+    </div>
+<%-include("partials/footer")-%>
+
+</div>
