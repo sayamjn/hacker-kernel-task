@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 const taskModel = new mongoose.Schema({
-    task: String,
+    task: [String],
     type: String,
     user: {
         type: mongoose.Schema.Types.ObjectId,
